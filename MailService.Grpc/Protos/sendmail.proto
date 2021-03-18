@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "MailService.Grpc.Protos";
+
+package sendmail;
+
+service SendMail {
+	rpc RunService (SendMailRequest) returns (SendMailReply);
+}
+
+message SendMailRequest {}
+
+message SendMailReply {}

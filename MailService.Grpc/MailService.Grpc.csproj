@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <protobuf Include="Protos\sendmail.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentEmail.MailKit" Version="3.0.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.36.0-pre1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MailService.Core\MailService.Core.csproj" />
+    <ProjectReference Include="..\MailService.Infrastructure\MailService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
