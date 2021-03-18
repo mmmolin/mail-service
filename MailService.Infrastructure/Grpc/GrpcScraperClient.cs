@@ -16,6 +16,7 @@ namespace MailService.Infrastructure.Grpc
             var httpHandler = new HttpClientHandler();
             httpHandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             using var channel = GrpcChannel.ForAddress("http://localhost:5000");
+
             var client = new Grpc.Protos.Mail.MailClient(channel);
             var reply = await client.GetMailAsync(new Protos.MailRequest());
             var links = reply.Links.Select(x => new LinkData(x.Title, x.Url));
